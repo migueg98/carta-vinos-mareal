@@ -2,8 +2,8 @@
    VARIABLES
 ─────────────────────────────────────────────── */
 :root{
-  --turquoise:#69c8c6;   /* acento pez-logo */
-  --yellow:#e2b41f;      /* molduras fachada */
+  --turquoise:#69c8c6;
+  --yellow:#e2b41f;
   --charcoal:#333;
   --gray:#f7f7f7;
   --font:'Poppins',sans-serif;
@@ -24,181 +24,88 @@ body{
   color:var(--charcoal);
   line-height:1.55;
   background:#fff;
-  font-size:16px;
 }
 
 img{max-width:100%;height:auto;display:block;}
 
-.container{
-  width:min(90%,1100px);
-  margin-inline:auto;
-}
+.container{width:min(90%,1100px);margin-inline:auto;}
 
 /* ───────────────────────────────────────────────
    NAVBAR
 ─────────────────────────────────────────────── */
-.navbar{
-  position:sticky;top:0;z-index:1000;
-  background:#fff;
-  border-bottom:4px solid var(--yellow);
-}
+.navbar{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:4px solid var(--yellow);}
+.navbar .container{display:flex;flex-direction:column;align-items:center;padding-block:.6rem;}
 
-.navbar .container{
-  display:flex;
-  flex-direction:column;          /* logo arriba, menú abajo */
-  align-items:center;
-  padding-block:.6rem;
-}
-
-/* Logo */
 .logo img{height:56px;}
 
-/* Menú */
-.menu{
-  display:flex;
-  gap:1.5rem;
-  flex-wrap:wrap;
-  justify-content:center;
-  margin-top:.4rem;
-}
-
-.menu a{
-  position:relative;
-  padding:.8rem 0;
-  font-weight:600;
-  text-decoration:none;
-  color:var(--charcoal);
-  transition:color .2s;
-}
-
+.menu{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;margin-top:.4rem;}
+.menu a{position:relative;padding:.8rem 0;font-weight:600;text-decoration:none;color:var(--charcoal);transition:color .2s;}
 .menu a:visited{color:var(--charcoal);}
+.menu a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:3px;background:var(--turquoise);transition:width .25s;}
+.menu a:hover::after,.menu a:focus::after{width:100%;}
 
-/* subrayado turquesa en hover/focus */
-.menu a::after{
-  content:'';
-  position:absolute;
-  left:0;bottom:0;
-  width:0;height:3px;
-  background:var(--turquoise);
-  transition:width .25s ease;
-}
-.menu a:hover::after,
-.menu a:focus::after{width:100%;}
-
-/* Burger (solo móvil) */
-.burger{
-  display:none;
-  background:none;
-  border:none;
-  cursor:pointer;
-  margin-top:.3rem;
-}
-.burger span{
-  display:block;
-  width:26px;height:3px;
-  background:var(--charcoal);
-  margin-bottom:4px;
-}
+.burger{display:none;background:none;border:none;cursor:pointer;margin-top:.3rem;}
+.burger span{display:block;width:26px;height:3px;background:var(--charcoal);margin-bottom:4px;}
 
 /* ───────────────────────────────────────────────
    SECCIONES
 ─────────────────────────────────────────────── */
 .wine-section{padding-block:3.5rem;}
-
 .wine-section.alt{background:var(--gray);}
-
-.wine-section h2{
-  font-size:2rem;
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:.5px;
-  margin:0 0 2rem;
-  text-align:center;
-  position:relative;
-}
-.wine-section h2::after{
-  content:'';
-  display:block;
-  width:90px;height:4px;
-  background:var(--turquoise);
-  margin:.8rem auto 0;
-}
+.wine-section h2{font-size:2rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin:0 0 2rem;text-align:center;position:relative;}
+.wine-section h2::after{content:'';display:block;width:90px;height:4px;background:var(--turquoise);margin:.8rem auto 0;}
 
 /* ───────────────────────────────────────────────
    TARJETAS DE VINO
 ─────────────────────────────────────────────── */
-.vino{
-  display:flex;
-  align-items:center;
-  gap:1.5rem;
-  padding-block:1.2rem;
-  border-bottom:1px solid rgba(0,0,0,.08);
-}
-
+.vino{display:flex;align-items:center;gap:1.5rem;padding-block:1.2rem;border-bottom:1px solid rgba(0,0,0,.15);}
 .vino:last-child{border-bottom:none;}
 
-.vino img{
-  width:90px;                    /* ajusta al tamaño de tus PNG */
-  object-fit:contain;
-}
+.vino img{width:90px;object-fit:contain;}
 
-/* info de la izquierda */
 .info{flex:1;}
 
+/* nombre */
 .nombre{
-  font-weight:600;
-  font-size:1.05rem;
-  margin:0 0 .25rem;
+  font-size:1.2rem;        /* más grande */
+  font-weight:700;         /* negrita */
+  margin:0 0 .2rem;
 }
 
+/* precio */
+.precio{
+  font-size:1.2rem;        /* mismo tamaño que nombre */
+  font-weight:400;         /* NO negrita */
+  margin:.35rem 0 0;
+}
+
+/* D.O. y Uva */
 .origen,
-.uva,
-.bodega,
-.precio{
+.uva{
+  font-size:.85rem;        /* más pequeño */
+  color:#666;
   margin:0;
-  font-size:.9rem;
-  line-height:1.3;
 }
 
-.precio{
-  font-weight:600;
-  margin-top:.25rem;
-}
+/* prefijos automáticos */
+.origen::before{content:'D.O. ';font-weight:600;color:#808080;}
+.uva::before{content:'UVA ';font-weight:600;color:#808080;}
+
+/* opcional bodega (si la usas) */
+.bodega{font-size:.85rem;color:#666;margin:0;}
 
 /* ───────────────────────────────────────────────
    FOOTER
 ─────────────────────────────────────────────── */
-.footer{
-  text-align:center;
-  background:var(--charcoal);
-  color:#fff;
-  padding:2rem 0;
-  font-size:.9rem;
-}
+.footer{text-align:center;background:var(--charcoal);color:#fff;padding:2rem 0;font-size:.9rem;}
 
 /* ───────────────────────────────────────────────
    RESPONSIVE
 ─────────────────────────────────────────────── */
 @media (max-width:768px){
-  /* Burger visible */
   .burger{display:block;}
-
-  /* Menú off-canvas */
-  .menu{
-    position:fixed;
-    inset:0 0 0 40%;
-    flex-direction:column;
-    padding:5rem 2rem;
-    background:#fff;
-    transform:translateX(100%);
-    transition:transform .3s ease-in-out;
-  }
+  .menu{position:fixed;inset:0 0 0 40%;flex-direction:column;padding:5rem 2rem;background:#fff;transform:translateX(100%);transition:transform .3s ease-in-out;}
   .menu.open{transform:translateX(0);}
-
-  /* Tarjetas: imagen arriba, texto abajo */
-  .vino{
-    flex-direction:column;
-    align-items:flex-start;
-  }
+  .vino{flex-direction:column;align-items:flex-start;}
   .vino img{width:120px;margin-bottom:.8rem;}
 }
