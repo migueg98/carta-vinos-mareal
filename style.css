@@ -81,10 +81,10 @@ img { max-width: 100%; height: auto; }
 /* -------------------------------------------------
    Hero
 ------------------------------------------------- */
-.hero {
-  min-height: 45vh;
-  background: url('../assets/hero.jpg') center/cover no-repeat;
-  position: relative;
+.hero{
+  min-height:45vh;
+  background:url('assets/hero.jpg') center/cover no-repeat;
+  position:relative;
 }
 
 .hero__overlay {
