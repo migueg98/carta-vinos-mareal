@@ -10,7 +10,7 @@
 }
 
 /* ───────────────────────────────────────────────
-   RESETS & BASE
+   RESET & BASE
 ─────────────────────────────────────────────── */
 *,
 *::before,
@@ -24,9 +24,10 @@ body{
   color:var(--charcoal);
   line-height:1.55;
   background:#fff;
+  font-size:16px;
 }
 
-img{max-width:100%;height:auto;}
+img{max-width:100%;height:auto;display:block;}
 
 .container{
   width:min(90%,1100px);
@@ -49,10 +50,10 @@ img{max-width:100%;height:auto;}
   padding-block:.6rem;
 }
 
-/* Logo centrado */
+/* Logo */
 .logo img{height:56px;}
 
-/* Menú (desktop) */
+/* Menú */
 .menu{
   display:flex;
   gap:1.5rem;
@@ -61,21 +62,18 @@ img{max-width:100%;height:auto;}
   margin-top:.4rem;
 }
 
-/* Estilo enlaces menú */
 .menu a{
   position:relative;
   padding:.8rem 0;
   font-weight:600;
-  text-decoration:none;       /* sin subrayado nativo */
-  color:var(--charcoal);      /* mismo color texto */
-  border-bottom:3px solid transparent;
+  text-decoration:none;
+  color:var(--charcoal);
   transition:color .2s;
 }
 
-/* mismo color tras visitar */
 .menu a:visited{color:var(--charcoal);}
 
-/* efecto subrayado turquesa al hover / focus */
+/* subrayado turquesa en hover/focus */
 .menu a::after{
   content:'';
   position:absolute;
@@ -87,7 +85,7 @@ img{max-width:100%;height:auto;}
 .menu a:hover::after,
 .menu a:focus::after{width:100%;}
 
-/* ─ Burger (solo móvil) ─ */
+/* Burger (solo móvil) */
 .burger{
   display:none;
   background:none;
@@ -114,7 +112,7 @@ img{max-width:100%;height:auto;}
   font-weight:800;
   text-transform:uppercase;
   letter-spacing:.5px;
-  margin:0 0 1.6rem;
+  margin:0 0 2rem;
   text-align:center;
   position:relative;
 }
@@ -124,6 +122,47 @@ img{max-width:100%;height:auto;}
   width:90px;height:4px;
   background:var(--turquoise);
   margin:.8rem auto 0;
+}
+
+/* ───────────────────────────────────────────────
+   TARJETAS DE VINO
+─────────────────────────────────────────────── */
+.vino{
+  display:flex;
+  align-items:center;
+  gap:1.5rem;
+  padding-block:1.2rem;
+  border-bottom:1px solid rgba(0,0,0,.08);
+}
+
+.vino:last-child{border-bottom:none;}
+
+.vino img{
+  width:90px;                    /* ajusta al tamaño de tus PNG */
+  object-fit:contain;
+}
+
+/* info de la izquierda */
+.info{flex:1;}
+
+.nombre{
+  font-weight:600;
+  font-size:1.05rem;
+  margin:0 0 .25rem;
+}
+
+.origen,
+.uva,
+.bodega,
+.precio{
+  margin:0;
+  font-size:.9rem;
+  line-height:1.3;
+}
+
+.precio{
+  font-weight:600;
+  margin-top:.25rem;
 }
 
 /* ───────────────────────────────────────────────
@@ -155,4 +194,11 @@ img{max-width:100%;height:auto;}
     transition:transform .3s ease-in-out;
   }
   .menu.open{transform:translateX(0);}
+
+  /* Tarjetas: imagen arriba, texto abajo */
+  .vino{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .vino img{width:120px;margin-bottom:.8rem;}
 }

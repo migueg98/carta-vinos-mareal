@@ -1,52 +1,351 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>MAREAL · Carta de Vinos</title>
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-
-  <!-- Hoja de estilos -->
   <link rel="stylesheet" href="style.css">
-
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 
 <body>
-  <!-- Barra superior -->
+  <!-- NAVBAR -->
   <header class="navbar">
     <div class="container">
-      <!-- Logo centrado -->
-      <a href="#" class="logo">
-        <img src="assets/logo.png" alt="MAREAL logo">
-      </a>
+      <a href="#" class="logo"><img src="assets/logo.png" alt="MAREAL logo"></a>
 
-      <!-- Menú de categorías -->
       <nav id="menu" class="menu">
-        <a href="#blancos">Blancos</a>
-        <a href="#rosados">Rosados</a>
         <a href="#tintos">Tintos</a>
-        <a href="#espumosos">Espumosos</a>
-        <a href="#dulces">Dulces</a>
+        <a href="#rosados">Rosados</a>
+        <a href="#blancos">Blancos</a>
+        <a href="#semis">Semidulces</a>
+        <a href="#cavas">Cavas & Champagne</a>
       </nav>
 
-      <!-- Burger en móvil -->
       <button id="burger" class="burger" aria-label="Abrir menú">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <!-- Secciones de la carta -->
+
   <main class="container">
-    <section id="blancos"   class="wine-section"><h2>Blancos</h2></section>
-    <section id="rosados"   class="wine-section alt"><h2>Rosados</h2></section>
-    <section id="tintos"    class="wine-section"><h2>Tintos</h2></section>
-    <section id="espumosos" class="wine-section alt"><h2>Espumosos</h2></section>
-    <section id="dulces"    class="wine-section"><h2>Generosos & Dulces</h2></section>
+
+    <!-- 1 · Vinos Tintos -->
+    <section id="tintos" class="wine-section">
+      <h2>Vinos Tintos</h2>
+
+      <!-- Cádiz -->
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Viña Lucía Roble</p>
+          <p class="origen">VT Cádiz</p>
+          <p class="uva">Syrah · Tempranillo</p>
+          <p class="precio">13,50 €</p>
+        </div>
+      </div>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Entrechuelos Tercer Año</p>
+          <p class="origen">VT Cádiz</p>
+          <p class="uva">Syrah · Merlot · Cab. Sauv. · Tintilla</p>
+          <p class="precio">17,00 €</p>
+        </div>
+      </div>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Entrechuelos Premium</p>
+          <p class="origen">VT Cádiz</p>
+          <p class="uva">Syrah · Merlot · Cab. Sauv.</p>
+          <p class="precio">21,00 €</p>
+        </div>
+      </div>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Finca Moncloa</p>
+          <p class="origen">VT Cádiz</p>
+          <p class="uva">Syrah · Cab. Sauv. · Tintilla</p>
+          <p class="precio">21,00 €</p>
+        </div>
+      </div>
+
+      <!-- Ribera -->
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Protos Roble</p>
+          <p class="origen">Ribera del Duero</p>
+          <p class="uva">Tinta del País</p>
+          <p class="precio">18,00 €</p>
+        </div>
+      </div>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Dominio de Fournier</p>
+          <p class="origen">Ribera del Duero</p>
+          <p class="uva">Tinta del País</p>
+          <p class="precio">36,00 €</p>
+        </div>
+      </div>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Sembro Roble</p>
+          <p class="origen">Ribera del Duero</p>
+          <p class="uva">Tinta del País</p>
+          <p class="precio">21,00 €</p>
+        </div>
+      </div>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Momo</p>
+          <p class="origen">Ribera del Duero</p>
+          <p class="uva">Tinta del País</p>
+          <p class="precio">20,00 €</p>
+        </div>
+      </div>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Emilio Moro Crianza</p>
+          <p class="origen">Ribera del Duero</p>
+          <p class="uva">Tempranillo · Merlot · Malbec</p>
+          <p class="precio">31,00 €</p>
+        </div>
+      </div>
+
+      <!-- Rioja -->
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Beronia Edición Limitada</p>
+          <p class="origen">D.O.Ca Rioja</p>
+          <p class="uva">Tempranillo</p>
+          <p class="precio">16,00 €</p>
+        </div>
+      </div>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Viña Alberdi Crianza</p>
+          <p class="origen">D.O.Ca Rioja</p>
+          <p class="uva">Tempranillo</p>
+          <p class="precio">27,00 €</p>
+        </div>
+      </div>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Viña Ardanza Reserva</p>
+          <p class="origen">D.O.Ca Rioja</p>
+          <p class="uva">Tempranillo · Garnacha</p>
+          <p class="precio">39,00 €</p>
+        </div>
+      </div>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Ramón Bilbao Crianza</p>
+          <p class="origen">D.O.Ca Rioja</p>
+          <p class="uva">Tempranillo</p>
+          <p class="precio">17,00 €</p>
+        </div>
+      </div>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Beronia Crianza</p>
+          <p class="origen">D.O.Ca Rioja</p>
+          <p class="uva">Tempranillo · Garnacha · Mazuelo</p>
+          <p class="precio">15,00 €</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 2 · Rosados -->
+    <section id="rosados" class="wine-section alt">
+      <h2>Vinos Rosados</h2>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Señorío de Sarría</p>
+          <p class="origen">Navarra</p>
+          <p class="uva">100 % Garnacha</p>
+          <p class="precio">15,00 €</p>
+        </div>
+      </div>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Entrechuelos Rosado</p>
+          <p class="origen">VT Cádiz</p>
+          <p class="uva">Tempranillo · Syrah · Merlot</p>
+          <p class="precio">15,00 €</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 3 · Blancos -->
+    <section id="blancos" class="wine-section">
+      <h2>Vinos Blancos</h2>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Tierra Blanca</p>
+          <p class="origen">VT Cádiz</p>
+          <p class="uva">Palomino Fino · Riesling</p>
+          <p class="precio">13,50 €</p>
+        </div>
+      </div>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Entrechuelos</p>
+          <p class="origen">VT Cádiz</p>
+          <p class="uva">100 % Chardonnay</p>
+          <p class="precio">15,00 €</p>
+        </div>
+      </div>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Valdespino Macharnudo</p>
+          <p class="origen">VT Cádiz</p>
+          <p class="uva">Palomino Fino</p>
+          <p class="precio">20,00 €</p>
+        </div>
+      </div>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Viña del Vero</p>
+          <p class="origen">Somontano</p>
+          <p class="uva">100 % Chardonnay</p>
+          <p class="precio">17,00 €</p>
+        </div>
+      </div>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Lusco</p>
+          <p class="origen">Rías Baixas</p>
+          <p class="uva">100 % Albariño</p>
+          <p class="precio">21,00 €</p>
+        </div>
+      </div>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Momo</p>
+          <p class="origen">Rueda</p>
+          <p class="uva">Verdejo · Viura</p>
+          <p class="precio">16,00 €</p>
+        </div>
+      </div>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Beronia Verdejo</p>
+          <p class="origen">Rueda</p>
+          <p class="uva">100 % Verdejo</p>
+          <p class="precio">15,00 €</p>
+        </div>
+      </div>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">José Pariente Verdejo</p>
+          <p class="origen">Rueda</p>
+          <p class="uva">100 % Verdejo</p>
+          <p class="precio">20,00 €</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 4 · Semidulces y Frizzantes -->
+    <section id="semis" class="wine-section alt">
+      <h2>Semidulces & Frizzantes</h2>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Tierra Blanca Semi</p>
+          <p class="origen">Cádiz</p>
+          <p class="uva">Palomino · Pardina · Moscatel · Riesling</p>
+          <p class="precio">13,50 €</p>
+        </div>
+      </div>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Risa 8</p>
+          <p class="origen">Valencia</p>
+          <p class="uva">Moscatel de Alejandría</p>
+          <p class="precio">13,50 €</p>
+        </div>
+      </div>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Croft Twist</p>
+          <p class="origen">Andalucía</p>
+          <p class="uva">Fino & Refresco</p>
+          <p class="precio">15,00 €</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 5 · Cavas y Champagne -->
+    <section id="cavas" class="wine-section">
+      <h2>Cavas & Champagne</h2>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Benjamín Codorníu</p>
+          <p class="origen">Cava</p>
+          <p class="uva">Macabeo · Parellada · Xarel·lo</p>
+          <p class="precio">5,50 €</p>
+        </div>
+      </div>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Cava Talayón</p>
+          <p class="origen">La Mancha</p>
+          <p class="uva">100 % Chardonnay</p>
+          <p class="precio">27,00 €</p>
+        </div>
+      </div>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Juvé &amp; Camps Reserva Familia</p>
+          <p class="origen">Cava</p>
+          <p class="uva">Macabeo · Parellada · Xarel·lo</p>
+          <p class="precio">18,00 €</p>
+        </div>
+      </div>
+
+      <div class="vino">
+        <div class="info">
+          <p class="nombre">Vilarnau Brut Reserva</p>
+          <p class="origen">Cava</p>
+          <p class="uva">Macabeo · Parellada · Xarel·lo</p>
+          <p class="precio">20,00 €</p>
+        </div>
+      </div>
+    </section>
+
   </main>
+
 
   <footer class="footer">
     <p>&copy; <span id="year"></span> MAREAL · Cádiz</p>
