@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MAREAL · Carta de Vinos</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+
+    <!-- Hoja de estilos principal -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+  </head>
+
+  <body>
+    <!-- Barra de navegación -->
+    <header class="navbar">
+      <div class="container">
+        <a href="#" class="logo"><img src="assets/logo.svg" alt="MAREAL logo" /></a>
+
+        <nav id="menu" class="menu">
+          <a href="#blancos">Blancos</a>
+          <a href="#rosados">Rosados</a>
+          <a href="#tintos">Tintos</a>
+          <a href="#espumosos">Espumosos</a>
+          <a href="#dulces">Dulces</a>
+        </nav>
+
+        <button id="burger" class="burger" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero con foto de fachada -->
+    <section class="hero">
+      <div class="hero__overlay">
+        <h1>Carta&nbsp;de&nbsp;Vinos</h1>
+        <p class="sub">Sabores atlánticos · Alma gaditana</p>
+      </div>
+    </section>
+
+    <!-- Secciones vacías (rellénalas cuando tengas los vinos) -->
+    <main class="container">
+      <section id="blancos" class="wine-section">
+        <h2>Blancos</h2>
+        <!-- Añade aquí tu tabla o lista de vinos blancos -->
+      </section>
+
+      <section id="rosados" class="wine-section alt">
+        <h2>Rosados</h2>
+      </section>
+
+      <section id="tintos" class="wine-section">
+        <h2>Tintos</h2>
+      </section>
+
+      <section id="espumosos" class="wine-section alt">
+        <h2>Espumosos</h2>
+      </section>
+
+      <section id="dulces" class="wine-section">
+        <h2>Generosos &amp; Dulces</h2>
+      </section>
+    </main>
+
+    <!-- Pie -->
+    <footer class="footer">
+      <p>&copy; <span id="year"></span> MAREAL · Cádiz</p>
+    </footer>
+
+    <!-- Script principal -->
+    <script src="js/app.js"></script>
+  </body>
+</html>
