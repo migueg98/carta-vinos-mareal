@@ -8,19 +8,22 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
-  <!-- Hoja de estilos (ahora en la raíz) -->
+  <!-- Hoja de estilos -->
   <link rel="stylesheet" href="style.css">
 
-  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
 </head>
 
 <body>
-  <!-- Barra de navegación -->
+  <!-- Barra superior -->
   <header class="navbar">
     <div class="container">
-      <!-- Logo PNG real -->
-      <a href="#" class="logo"><img src="assets/logo.png" alt="MAREAL logo"></a>
+      <!-- Logo centrado -->
+      <a href="#" class="logo">
+        <img src="assets/logo.png" alt="MAREAL logo">
+      </a>
 
+      <!-- Menú de categorías -->
       <nav id="menu" class="menu">
         <a href="#blancos">Blancos</a>
         <a href="#rosados">Rosados</a>
@@ -29,21 +32,14 @@
         <a href="#dulces">Dulces</a>
       </nav>
 
+      <!-- Burger en móvil -->
       <button id="burger" class="burger" aria-label="Abrir menú">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero__overlay">
-      <h1>Carta&nbsp;de&nbsp;Vinos</h1>
-      <p class="sub">Sabores atlánticos · Alma gaditana</p>
-    </div>
-  </section>
-
-  <!-- Secciones (vacías de momento) -->
+  <!-- Secciones de la carta -->
   <main class="container">
     <section id="blancos"   class="wine-section"><h2>Blancos</h2></section>
     <section id="rosados"   class="wine-section alt"><h2>Rosados</h2></section>
@@ -56,7 +52,6 @@
     <p>&copy; <span id="year"></span> MAREAL · Cádiz</p>
   </footer>
 
-  <!-- Script (en la raíz) -->
   <script src="app.js" defer></script>
 </body>
 </html>
