@@ -1,13 +1,17 @@
-/* ---------- Variables ---------- */
+/* ───────────────────────────────────────────────
+   VARIABLES
+─────────────────────────────────────────────── */
 :root{
-  --turquoise:#69c8c6;
-  --yellow:#e2b41f;
+  --turquoise:#69c8c6;   /* acento pez-logo */
+  --yellow:#e2b41f;      /* molduras fachada */
   --charcoal:#333;
   --gray:#f7f7f7;
   --font:'Poppins',sans-serif;
 }
 
-/* ---------- Reset & básicos ---------- */
+/* ───────────────────────────────────────────────
+   RESETS & BASE
+─────────────────────────────────────────────── */
 *,
 *::before,
 *::after{box-sizing:border-box;}
@@ -29,7 +33,9 @@ img{max-width:100%;height:auto;}
   margin-inline:auto;
 }
 
-/* ---------- Navbar ---------- */
+/* ───────────────────────────────────────────────
+   NAVBAR
+─────────────────────────────────────────────── */
 .navbar{
   position:sticky;top:0;z-index:1000;
   background:#fff;
@@ -43,41 +49,62 @@ img{max-width:100%;height:auto;}
   padding-block:.6rem;
 }
 
-/* Logo */
+/* Logo centrado */
 .logo img{height:56px;}
 
-/* Menú */
+/* Menú (desktop) */
 .menu{
   display:flex;
   gap:1.5rem;
-  font-weight:600;
-  margin-top:.4rem;
   flex-wrap:wrap;
   justify-content:center;
+  margin-top:.4rem;
 }
 
+/* Estilo enlaces menú */
 .menu a{
+  position:relative;
   padding:.8rem 0;
+  font-weight:600;
+  text-decoration:none;       /* sin subrayado nativo */
+  color:var(--charcoal);      /* mismo color texto */
   border-bottom:3px solid transparent;
-  transition:border-color .2s;
+  transition:color .2s;
 }
 
-.menu a:hover,
-.menu a:focus{border-color:var(--turquoise);}
+/* mismo color tras visitar */
+.menu a:visited{color:var(--charcoal);}
 
-/* Burger */
+/* efecto subrayado turquesa al hover / focus */
+.menu a::after{
+  content:'';
+  position:absolute;
+  left:0;bottom:0;
+  width:0;height:3px;
+  background:var(--turquoise);
+  transition:width .25s ease;
+}
+.menu a:hover::after,
+.menu a:focus::after{width:100%;}
+
+/* ─ Burger (solo móvil) ─ */
 .burger{
   display:none;
-  background:none;border:none;cursor:pointer;
+  background:none;
+  border:none;
+  cursor:pointer;
   margin-top:.3rem;
 }
 .burger span{
   display:block;
   width:26px;height:3px;
-  background:var(--charcoal);margin-bottom:4px;
+  background:var(--charcoal);
+  margin-bottom:4px;
 }
 
-/* ---------- Secciones ---------- */
+/* ───────────────────────────────────────────────
+   SECCIONES
+─────────────────────────────────────────────── */
 .wine-section{padding-block:3.5rem;}
 
 .wine-section.alt{background:var(--gray);}
@@ -87,9 +114,9 @@ img{max-width:100%;height:auto;}
   font-weight:800;
   text-transform:uppercase;
   letter-spacing:.5px;
-  position:relative;
   margin:0 0 1.6rem;
   text-align:center;
+  position:relative;
 }
 .wine-section h2::after{
   content:'';
@@ -99,7 +126,9 @@ img{max-width:100%;height:auto;}
   margin:.8rem auto 0;
 }
 
-/* ---------- Footer ---------- */
+/* ───────────────────────────────────────────────
+   FOOTER
+─────────────────────────────────────────────── */
 .footer{
   text-align:center;
   background:var(--charcoal);
@@ -108,7 +137,9 @@ img{max-width:100%;height:auto;}
   font-size:.9rem;
 }
 
-/* ---------- Responsive ---------- */
+/* ───────────────────────────────────────────────
+   RESPONSIVE
+─────────────────────────────────────────────── */
 @media (max-width:768px){
   /* Burger visible */
   .burger{display:block;}
