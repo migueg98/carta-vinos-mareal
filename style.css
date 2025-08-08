@@ -87,10 +87,10 @@ img{max-width:100%;height:auto;display:block;}
   }
   .menu::-webkit-scrollbar{display:none;}
   .menu a{
-    background:var(--gray);
+    background:var(--gray);     /* cambia a transparent si no quieres gris aquí */
     padding:.55rem .9rem;
-    border-radius:0;           /* cuadradas */
-    white-space:nowrap;        /* una sola línea */
+    border-radius:0;            /* cuadradas */
+    white-space:nowrap;         /* una sola línea */
     margin:0;
     text-decoration:none;
   }
@@ -105,7 +105,8 @@ img{max-width:100%;height:auto;display:block;}
   padding-block:3.5rem;
   scroll-margin-top:100px;   /* hueco bajo la barra sticky */
 }
-.wine-section.alt{background:var(--gray);}
+/* Quitar fondo gris de categorías alternas */
+.wine-section.alt{background:transparent;}
 
 .wine-section h2{
   font-size:2rem;font-weight:800;text-transform:uppercase;
