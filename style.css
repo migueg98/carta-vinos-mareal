@@ -7,6 +7,12 @@
   --charcoal:#333;
   --gray:#f7f7f7;
   --font:'Poppins',sans-serif;
+
+  /* Botellas (puedes ajustar) */
+  --bottle-w: 92px;    /* desktop width */
+  --bottle-h: 180px;   /* desktop height */
+  --bottle-w-m: 80px;  /* mobile width */
+  --bottle-h-m: 150px; /* mobile height */
 }
 
 /* ───────────────────────────────────────────────
@@ -66,9 +72,10 @@ img{max-width:100%;height:auto;display:block;}
   content:'';position:absolute;left:0;bottom:0;width:0;height:3px;
   background:var(--turquoise);transition:width .25s ease;
 }
-.menu a:hover::after,.menu a:focus::after{width:100%;}
+.menu a:hover::after,
+.menu a:focus::after{width:100%;}
 
-/* Ocultamos burger en general */
+/* Ocultamos burger (ya no se usa) */
 .burger{display:none !important;}
 
 /* ───────── Móvil: barra horizontal desplazable tipo Uber Eats ───────── */
@@ -80,15 +87,14 @@ img{max-width:100%;height:auto;display:block;}
   }
   .menu::-webkit-scrollbar{display:none;}
   .menu a{
-    /* Píldoras → ahora CUADRADAS y en una sola línea */
     background:var(--gray);
     padding:.55rem .9rem;
-    border-radius:0;           /* ← cuadrado */
-    white-space:nowrap;        /* ← una sola línea */
+    border-radius:0;           /* cuadrado */
+    white-space:nowrap;        /* una sola línea */
     margin:0;
     text-decoration:none;
   }
-  .menu a::after{display:none;}                /* sin subrayado en móvil */
+  .menu a::after{display:none;} /* sin subrayado en móvil */
   .menu a.active{background:var(--turquoise);color:#fff;}
 }
 
@@ -97,7 +103,7 @@ img{max-width:100%;height:auto;display:block;}
 ─────────────────────────────────────────────── */
 .wine-section{
   padding-block:3.5rem;
-  scroll-margin-top:100px;            /* hueco bajo la barra sticky */
+  scroll-margin-top:100px;   /* deja hueco bajo la barra sticky */
 }
 .wine-section.alt{background:var(--gray);}
 
@@ -114,27 +120,82 @@ img{max-width:100%;height:auto;display:block;}
    TARJETAS DE VINO
 ─────────────────────────────────────────────── */
 .vino{
-  display:flex;align-items:center;gap:1.5rem;
-  padding-block:1.2rem;border-bottom:1px solid rgba(0,0,0,.15);
+  display:flex;
+  align-items:flex-start;          /* alinear contenido arriba */
+  justify-content:space-between;
+  gap:1rem;
+  padding-block:1.2rem;
+  border-bottom:1px solid rgba(0,0,0,.15);  /* barra separadora */
 }
 .vino:last-child{border-bottom:none;}
 
-.vino img{width:90px;object-fit:contain;}
 .info{flex:1;}
 
 /* Nombre (grande y en negrita) */
-.nombre{font-size:1.2rem;font-weight:700;margin:0 0 .2rem;}
+.nombre{
+  font-size:1.2rem;   /* más grande */
+  font-weight:700;    /* negrita */
+  margin:0 0 .2rem;
+}
 
 /* Precio (igual de grande, sin negrita) */
-.precio{font-size:1.2rem;font-weight:400;margin:.35rem 0 0;}
+.precio{
+  font-size:1.2rem;
+  font-weight:400;
+  margin:.35rem 0 0;
+}
 
 /* D.O. y UVA en gris y más pequeños (con prefijos automáticos) */
-.origen,.uva{font-size:.85rem;color:#666;margin:0;}
+.origen,
+.uva{
+  font-size:.85rem;
+  color:#666;
+  margin:0;
+}
 .origen::before{content:'D.O. ';font-weight:600;color:#808080;}
 .uva::before{content:'UVA ';font-weight:600;color:#808080;}
+
+/* opcional bodega (si la usas) */
 .bodega{font-size:.85rem;color:#666;margin:0;}
+
+/* ───────────────────────────────────────────────
+   BOTELLAS A LA DERECHA (marco fijo + tapa alineada)
+─────────────────────────────────────────────── */
+.vino .media{
+  flex:0 0 var(--bottle-w);
+  width:var(--bottle-w);
+  height:var(--bottle-h);
+  margin-left:12px;
+  align-self:flex-start;   /* pega el marco al borde superior de la tarjeta */
+  position:relative;
+  overflow:hidden;
+}
+
+/* Imagen: centrada horizontalmente, ANCLADA ARRIBA (tapa arriba) */
+.vino .media img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:50% 0;   /* centro-x, top-y */
+}
+
+/* Móvil: mantenemos fila y ajustamos marco de la botella */
+@media (max-width:768px){
+  .vino{flex-direction:row;align-items:flex-start;}
+  .vino .media{
+    flex:0 0 var(--bottle-w-m);
+    width:var(--bottle-w-m);
+    height:var(--bottle-h-m);
+    margin-left:10px;
+  }
+}
 
 /* ───────────────────────────────────────────────
    FOOTER
 ─────────────────────────────────────────────── */
-.footer{text-align:center;background:var(--charcoal);color:#fff;padding:2rem 0;font-size:.9rem;}
+.footer{
+  text-align:center;background:var(--charcoal);
+  color:#fff;padding:2rem 0;font-size:.9rem;
+}
