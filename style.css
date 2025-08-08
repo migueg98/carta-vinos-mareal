@@ -46,7 +46,7 @@ img{max-width:100%;height:auto;display:block;}
 /* Logo centrado */
 .logo img{height:56px;}
 
-/* Barra de categorías (desktop por defecto) */
+/* Barra de categorías (desktop) */
 .menu{
   width:100%;
   display:flex;gap:1.5rem;flex-wrap:wrap;
@@ -68,7 +68,7 @@ img{max-width:100%;height:auto;display:block;}
 }
 .menu a:hover::after,.menu a:focus::after{width:100%;}
 
-/* Ocultamos burger (ya no lo usamos) */
+/* Ocultamos burger en general */
 .burger{display:none !important;}
 
 /* ───────── Móvil: barra horizontal desplazable tipo Uber Eats ───────── */
@@ -80,8 +80,12 @@ img{max-width:100%;height:auto;display:block;}
   }
   .menu::-webkit-scrollbar{display:none;}
   .menu a{
+    /* Píldoras → ahora CUADRADAS y en una sola línea */
     background:var(--gray);
-    padding:.55rem .9rem;border-radius:999px;margin:0;
+    padding:.55rem .9rem;
+    border-radius:0;           /* ← cuadrado */
+    white-space:nowrap;        /* ← una sola línea */
+    margin:0;
     text-decoration:none;
   }
   .menu a::after{display:none;}                /* sin subrayado en móvil */
@@ -93,7 +97,7 @@ img{max-width:100%;height:auto;display:block;}
 ─────────────────────────────────────────────── */
 .wine-section{
   padding-block:3.5rem;
-  scroll-margin-top:100px;            /* deja hueco bajo la barra sticky */
+  scroll-margin-top:100px;            /* hueco bajo la barra sticky */
 }
 .wine-section.alt{background:var(--gray);}
 

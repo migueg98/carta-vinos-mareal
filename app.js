@@ -17,31 +17,22 @@ links.forEach(a => {
     const target = document.querySelector(a.getAttribute('href'));
     if (!target) return;
     setActive(target.id);
-    centerActive(a);
+    // ¡Sin auto-centrado! Solo desplazamos la página:
     scrollToSection(target);
   }, { passive: true });
 });
 
-/* ---------- Scrollspy + auto-centrado del tab activo ---------- */
+/* ---------- Scrollspy (resalta categoría activa) ---------- */
 function setActive(id){
   links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === `#${id}`));
-}
-
-function centerActive(link){
-  if(!link) return;
-  const navRect = menu.getBoundingClientRect();
-  const linkRect = link.getBoundingClientRect();
-  const offset = (linkRect.left + linkRect.width/2) - (navRect.left + navRect.width/2);
-  menu.scrollBy({ left: offset, behavior: 'smooth' });
 }
 
 const io = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
       const id = entry.target.id;
-      const activeLink = menu.querySelector(`a[href="#${id}"]`);
       setActive(id);
-      centerActive(activeLink);
+      // Sin mover la barra: no hacemos ningún scroll del menú
     }
   });
 }, { root: null, rootMargin: '-45% 0px -50% 0px', threshold: 0.01 });
