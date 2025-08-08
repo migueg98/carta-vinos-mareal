@@ -31,81 +31,106 @@ img{max-width:100%;height:auto;display:block;}
 .container{width:min(90%,1100px);margin-inline:auto;}
 
 /* ───────────────────────────────────────────────
-   NAVBAR
+   NAVBAR + CATEGORÍAS
 ─────────────────────────────────────────────── */
-.navbar{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:4px solid var(--yellow);}
-.navbar .container{display:flex;flex-direction:column;align-items:center;padding-block:.6rem;}
+.navbar{
+  position:sticky;top:0;z-index:1000;
+  background:#fff;border-bottom:4px solid var(--yellow);
+}
 
+.navbar .container{
+  display:flex;flex-direction:column;align-items:center;
+  padding-block:.6rem;
+}
+
+/* Logo centrado */
 .logo img{height:56px;}
 
-.menu{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;margin-top:.4rem;}
-.menu a{position:relative;padding:.8rem 0;font-weight:600;text-decoration:none;color:var(--charcoal);transition:color .2s;}
+/* Barra de categorías (desktop por defecto) */
+.menu{
+  width:100%;
+  display:flex;gap:1.5rem;flex-wrap:wrap;
+  justify-content:center;margin-top:.4rem;
+}
+
+.menu a{
+  position:relative;
+  padding:.8rem 0;
+  font-weight:600;
+  text-decoration:none;
+  color:var(--charcoal);
+  transition:color .2s;
+}
 .menu a:visited{color:var(--charcoal);}
-.menu a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:3px;background:var(--turquoise);transition:width .25s;}
+.menu a::after{
+  content:'';position:absolute;left:0;bottom:0;width:0;height:3px;
+  background:var(--turquoise);transition:width .25s ease;
+}
 .menu a:hover::after,.menu a:focus::after{width:100%;}
 
-.burger{display:none;background:none;border:none;cursor:pointer;margin-top:.3rem;}
-.burger span{display:block;width:26px;height:3px;background:var(--charcoal);margin-bottom:4px;}
+/* Ocultamos burger (ya no lo usamos) */
+.burger{display:none !important;}
+
+/* ───────── Móvil: barra horizontal desplazable tipo Uber Eats ───────── */
+@media (max-width:768px){
+  .menu{
+    flex-wrap:nowrap;justify-content:flex-start;gap:.5rem;
+    overflow-x:auto;padding:.5rem .75rem;margin-top:.35rem;
+    scrollbar-width:none;-ms-overflow-style:none;
+  }
+  .menu::-webkit-scrollbar{display:none;}
+  .menu a{
+    background:var(--gray);
+    padding:.55rem .9rem;border-radius:999px;margin:0;
+    text-decoration:none;
+  }
+  .menu a::after{display:none;}                /* sin subrayado en móvil */
+  .menu a.active{background:var(--turquoise);color:#fff;}
+}
 
 /* ───────────────────────────────────────────────
    SECCIONES
 ─────────────────────────────────────────────── */
-.wine-section{padding-block:3.5rem;}
+.wine-section{
+  padding-block:3.5rem;
+  scroll-margin-top:100px;            /* deja hueco bajo la barra sticky */
+}
 .wine-section.alt{background:var(--gray);}
-.wine-section h2{font-size:2rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin:0 0 2rem;text-align:center;position:relative;}
-.wine-section h2::after{content:'';display:block;width:90px;height:4px;background:var(--turquoise);margin:.8rem auto 0;}
+
+.wine-section h2{
+  font-size:2rem;font-weight:800;text-transform:uppercase;
+  letter-spacing:.5px;margin:0 0 2rem;text-align:center;position:relative;
+}
+.wine-section h2::after{
+  content:'';display:block;width:90px;height:4px;background:var(--turquoise);
+  margin:.8rem auto 0;
+}
 
 /* ───────────────────────────────────────────────
    TARJETAS DE VINO
 ─────────────────────────────────────────────── */
-.vino{display:flex;align-items:center;gap:1.5rem;padding-block:1.2rem;border-bottom:1px solid rgba(0,0,0,.15);}
+.vino{
+  display:flex;align-items:center;gap:1.5rem;
+  padding-block:1.2rem;border-bottom:1px solid rgba(0,0,0,.15);
+}
 .vino:last-child{border-bottom:none;}
 
 .vino img{width:90px;object-fit:contain;}
-
 .info{flex:1;}
 
-/* nombre */
-.nombre{
-  font-size:1.2rem;        /* más grande */
-  font-weight:700;         /* negrita */
-  margin:0 0 .2rem;
-}
+/* Nombre (grande y en negrita) */
+.nombre{font-size:1.2rem;font-weight:700;margin:0 0 .2rem;}
 
-/* precio */
-.precio{
-  font-size:1.2rem;        /* mismo tamaño que nombre */
-  font-weight:400;         /* NO negrita */
-  margin:.35rem 0 0;
-}
+/* Precio (igual de grande, sin negrita) */
+.precio{font-size:1.2rem;font-weight:400;margin:.35rem 0 0;}
 
-/* D.O. y Uva */
-.origen,
-.uva{
-  font-size:.85rem;        /* más pequeño */
-  color:#666;
-  margin:0;
-}
-
-/* prefijos automáticos */
+/* D.O. y UVA en gris y más pequeños (con prefijos automáticos) */
+.origen,.uva{font-size:.85rem;color:#666;margin:0;}
 .origen::before{content:'D.O. ';font-weight:600;color:#808080;}
 .uva::before{content:'UVA ';font-weight:600;color:#808080;}
-
-/* opcional bodega (si la usas) */
 .bodega{font-size:.85rem;color:#666;margin:0;}
 
 /* ───────────────────────────────────────────────
    FOOTER
 ─────────────────────────────────────────────── */
 .footer{text-align:center;background:var(--charcoal);color:#fff;padding:2rem 0;font-size:.9rem;}
-
-/* ───────────────────────────────────────────────
-   RESPONSIVE
-─────────────────────────────────────────────── */
-@media (max-width:768px){
-  .burger{display:block;}
-  .menu{position:fixed;inset:0 0 0 40%;flex-direction:column;padding:5rem 2rem;background:#fff;transform:translateX(100%);transition:transform .3s ease-in-out;}
-  .menu.open{transform:translateX(0);}
-  .vino{flex-direction:column;align-items:flex-start;}
-  .vino img{width:120px;margin-bottom:.8rem;}
-}
